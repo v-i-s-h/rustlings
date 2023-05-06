@@ -9,14 +9,20 @@
 // implementing this trait.
 // Execute `rustlings hint traits1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
+// impl<T> AppendBar for Vec<T> {
+//     fn append_bar(self) -> Self {
+//         self.map(|x| x.append_bar())
+//     }
+// }
 
 impl AppendBar for String {
     // TODO: Implement `AppendBar` for type `String`.
+    fn append_bar(self) -> String {
+        format!("{}Bar", self)
+    }
 }
 
 fn main() {
